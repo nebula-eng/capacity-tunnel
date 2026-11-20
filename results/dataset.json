@@ -1,0 +1,14 @@
+{
+  "n_features": 20,
+  "n_total": 480,
+  "per_class": {
+    "b32": 80,
+    "bulk": 80,
+    "doh_browse": 80,
+    "hardened": 80,
+    "interactive": 80,
+    "timing": 80
+  },
+  "seed": 2024,
+  "window": 512
+}

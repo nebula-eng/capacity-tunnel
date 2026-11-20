@@ -1,0 +1,430 @@
+{
+  "baselines": {
+    "capacity_only": {
+      "auc": 1.0,
+      "features": [
+        "size_entropy_rate",
+        "size_uniformity",
+        "timing_separation",
+        "timing_capacity",
+        "log_capacity_bps",
+        "log_capacity_ratio"
+      ],
+      "fpr_at_95tpr": 0.0,
+      "n_features": 6
+    },
+    "entropy_only": {
+      "auc": 0.902378,
+      "features": [
+        "size_entropy",
+        "timing_entropy"
+      ],
+      "fpr_at_95tpr": 0.229167,
+      "n_features": 2
+    },
+    "full": {
+      "auc": 1.0,
+      "features": [
+        "size_entropy",
+        "size_entropy_rate",
+        "size_mi",
+        "size_alphabet",
+        "size_uniformity",
+        "timing_entropy",
+        "timing_snr",
+        "timing_separation",
+        "timing_capacity",
+        "iat_cv",
+        "fano_factor",
+        "up_fraction",
+        "size_acf_peak",
+        "periodicity",
+        "unique_ratio",
+        "log_mean_size",
+        "log_pkt_rate",
+        "log_capacity_bps",
+        "log_capacity_ratio",
+        "size_class_share"
+      ],
+      "fpr_at_95tpr": 0.0,
+      "n_features": 20
+    },
+    "no_direction": {
+      "auc": 1.0,
+      "features": [
+        "size_entropy",
+        "size_entropy_rate",
+        "size_mi",
+        "size_alphabet",
+        "size_uniformity",
+        "timing_entropy",
+        "timing_snr",
+        "timing_separation",
+        "timing_capacity",
+        "iat_cv",
+        "fano_factor",
+        "size_acf_peak",
+        "periodicity",
+        "unique_ratio",
+        "log_mean_size",
+        "log_pkt_rate",
+        "log_capacity_bps",
+        "log_capacity_ratio",
+        "size_class_share"
+      ],
+      "fpr_at_95tpr": 0.0,
+      "n_features": 19
+    },
+    "size_only": {
+      "auc": 0.991667,
+      "features": [
+        "size_entropy",
+        "size_mi",
+        "size_alphabet",
+        "unique_ratio",
+        "log_mean_size",
+        "size_class_share",
+        "size_acf_peak"
+      ],
+      "fpr_at_95tpr": 0.0375,
+      "n_features": 7
+    },
+    "timing_only": {
+      "auc": 0.990278,
+      "features": [
+        "timing_entropy",
+        "timing_snr",
+        "timing_separation",
+        "timing_capacity",
+        "iat_cv",
+        "periodicity"
+      ],
+      "fpr_at_95tpr": 0.0375,
+      "n_features": 6
+    }
+  },
+  "channel": {
+    "b32": {
+      "ber": 0.0,
+      "nominal_duration_s": 0.410233,
+      "packets_received": 103,
+      "packets_sent": 103,
+      "payload_bytes": 64,
+      "sha256_match": true,
+      "throughput_bps": 1248.07245
+    },
+    "hardened": {
+      "ber": 0.0,
+      "nominal_duration_s": 2.983149,
+      "packets_received": 198,
+      "packets_sent": 199,
+      "payload_bytes": 64,
+      "sha256_match": true,
+      "throughput_bps": 171.630709
+    },
+    "timing": {
+      "ber": 0.0,
+      "nominal_duration_s": 8.238304,
+      "packets_received": 512,
+      "packets_sent": 513,
+      "payload_bytes": 64,
+      "sha256_match": true,
+      "throughput_bps": 62.148717
+    }
+  },
+  "config": {
+    "channel_payload_bytes": 64,
+    "cv_folds": 5,
+    "l2": 0.01,
+    "per_class": 80,
+    "seed": 2024,
+    "window": 512
+  },
+  "dataset": {
+    "n_benign": 240,
+    "n_total": 480,
+    "n_tunnel": 240,
+    "per_class": {
+      "b32": 80,
+      "bulk": 80,
+      "doh_browse": 80,
+      "hardened": 80,
+      "interactive": 80,
+      "timing": 80
+    }
+  },
+  "descriptive": {
+    "per_class_medians": {
+      "b32": {
+        "capacity_bps": 0.0,
+        "capacity_ratio": -7.0,
+        "size_alphabet": 1.0,
+        "size_entropy": 0.0,
+        "size_entropy_rate": 0.0
+      },
+      "bulk": {
+        "capacity_bps": 592.018391,
+        "capacity_ratio": -3.835395,
+        "size_alphabet": 4.5,
+        "size_entropy": 2.523607,
+        "size_entropy_rate": 2.678595
+      },
+      "doh_browse": {
+        "capacity_bps": 19.155562,
+        "capacity_ratio": -3.791743,
+        "size_alphabet": 1.0,
+        "size_entropy": 5.995779,
+        "size_entropy_rate": 0.929632
+      },
+      "hardened": {
+        "capacity_bps": 132.291314,
+        "capacity_ratio": -3.511854,
+        "size_alphabet": 11.0,
+        "size_entropy": 4.306747,
+        "size_entropy_rate": 4.087424
+      },
+      "interactive": {
+        "capacity_bps": 3.731769,
+        "capacity_ratio": -3.210473,
+        "size_alphabet": 5.0,
+        "size_entropy": 5.108657,
+        "size_entropy_rate": 2.174614
+      },
+      "timing": {
+        "capacity_bps": 67.46166,
+        "capacity_ratio": -3.382083,
+        "size_alphabet": 1.0,
+        "size_entropy": 0.0,
+        "size_entropy_rate": 0.997407
+      }
+    },
+    "single_feature_auc": {
+      "fano_factor": 0.147274,
+      "iat_cv": 0.157517,
+      "log_capacity_bps": 0.531372,
+      "log_capacity_ratio": 0.446979,
+      "log_mean_size": 0.331128,
+      "log_pkt_rate": 0.812344,
+      "periodicity": 0.846823,
+      "size_acf_peak": 0.083611,
+      "size_alphabet": 0.437465,
+      "size_class_share": 0.761476,
+      "size_entropy": 0.080625,
+      "size_entropy_rate": 0.427483,
+      "size_mi": 0.048924,
+      "size_uniformity": 0.325677,
+      "timing_capacity": 0.672917,
+      "timing_entropy": 0.108351,
+      "timing_separation": 0.154792,
+      "timing_snr": 0.987274,
+      "unique_ratio": 0.080339,
+      "up_fraction": 0.731849
+    }
+  },
+  "detector": {
+    "auc": 1.0,
+    "features": [
+      "size_entropy",
+      "size_entropy_rate",
+      "size_mi",
+      "size_alphabet",
+      "size_uniformity",
+      "timing_entropy",
+      "timing_snr",
+      "timing_separation",
+      "timing_capacity",
+      "iat_cv",
+      "fano_factor",
+      "up_fraction",
+      "size_acf_peak",
+      "periodicity",
+      "unique_ratio",
+      "log_mean_size",
+      "log_pkt_rate",
+      "log_capacity_bps",
+      "log_capacity_ratio",
+      "size_class_share"
+    ],
+    "fold_aucs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "fold_fpr_at_95tpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "fpr_at_95tpr": 0.0,
+    "n_features": 20,
+    "threshold_at_95tpr": 2.647622,
+    "tpr_at_5fpr": 1.0
+  },
+  "per_mode": {
+    "b32": {
+      "auc": 1.0,
+      "fpr_at_95tpr": 0.0,
+      "n_benign": 240,
+      "n_tunnel": 80,
+      "tpr_at_5fpr": 1.0
+    },
+    "hardened": {
+      "auc": 1.0,
+      "fpr_at_95tpr": 0.0,
+      "n_benign": 240,
+      "n_tunnel": 80,
+      "tpr_at_5fpr": 1.0
+    },
+    "timing": {
+      "auc": 1.0,
+      "fpr_at_95tpr": 0.0,
+      "n_benign": 240,
+      "n_tunnel": 80,
+      "tpr_at_5fpr": 1.0
+    }
+  },
+  "robustness": {
+    "n_benign_holdout": 72,
+    "padding_sweep": [
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 135.75252,
+        "median_timing_separation": 0.800131,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 1.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 96.959326,
+        "median_timing_separation": 0.799958,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.5,
+        "scale": 1.5
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 65.40245,
+        "median_timing_separation": 0.799453,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 2.0,
+        "scale": 2.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 69.155964,
+        "median_timing_separation": 0.799906,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 4.0,
+        "scale": 4.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 67.829148,
+        "median_timing_separation": 0.799132,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 8.0,
+        "scale": 8.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 65.34569,
+        "median_timing_separation": 0.799489,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 16.0,
+        "scale": 16.0
+      }
+    ],
+    "protocol": "model trained on 70% stratified split; benign reference is the 30% hold-out; detector frozen",
+    "timing_jitter_sweep": [
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 1.0,
+        "median_capacity_bps": 130.785773,
+        "median_timing_separation": 0.800233,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 1.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 2.0,
+        "median_capacity_bps": 130.820032,
+        "median_timing_separation": 0.791915,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 2.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 4.0,
+        "median_capacity_bps": 129.02809,
+        "median_timing_separation": 0.790126,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 4.0
+      },
+      {
+        "auc": 1.0,
+        "auc_entropy_only": 0.833333,
+        "fpr_at_95tpr": 0.0,
+        "jitter_scale": 8.0,
+        "median_capacity_bps": 96.89755,
+        "median_timing_separation": 0.822199,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 8.0
+      },
+      {
+        "auc": 0.997222,
+        "auc_entropy_only": 0.832639,
+        "fpr_at_95tpr": 0.013889,
+        "jitter_scale": 16.0,
+        "median_capacity_bps": 71.503964,
+        "median_timing_separation": 0.866285,
+        "n_benign": 72,
+        "n_tunnel": 40,
+        "pad_scale": 1.0,
+        "scale": 16.0
+      }
+    ]
+  }
+}

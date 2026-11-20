@@ -1,0 +1,14 @@
+{
+  "auc": 1.0,
+  "fold_aucs": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "fpr_at_95tpr": 0.0,
+  "n_features": 20,
+  "n_total": 480,
+  "threshold": 2.623007
+}

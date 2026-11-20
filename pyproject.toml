@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capacity-tunnel"
+version = "1.0.0"
+description = "Covert-tunnel detection via covert-channel capacity fingerprints"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Blue" }]
+keywords = ["network-security", "covert-channel", "traffic-analysis", "entropy-rate", "detection"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Typing :: Typed",
+    "Topic :: Security",
+    "Topic :: System :: Networking :: Monitoring",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7"]
+dev = ["flake8>=7.0", "matplotlib>=3.7"]
+
+[project.scripts]
+capacity-tunnel = "capacity_tunnel.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nebula-eng/capacity-tunnel"
+Documentation = "https://github.com/nebula-eng/capacity-tunnel/tree/main/docs"
+Issues = "https://github.com/nebula-eng/capacity-tunnel/issues"
+Changelog = "https://github.com/nebula-eng/capacity-tunnel/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
